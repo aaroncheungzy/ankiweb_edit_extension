@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Anki 编辑器",
-  "version": "1.0",
-  "description": "Anki网页添加卡片编辑器",
+  "version": "2.0",
+  "description": "Ankiweb卡片编辑器",
   "content_scripts": [
     {
       "matches": ["https://ankiuser.net/add*","https://ankiuser.net/edit*"],
@@ -10,4 +10,5 @@
       "css": ["style.css"]
     }
   ]
+
 }

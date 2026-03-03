@@ -1,0 +1,82 @@
+#anki-global-toolbar {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  z-index: 999999;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  border: 1px solid #ddd;
+  width: 360px;
+}
+.toolbar-head {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px;
+  background: #0078d7;
+  color: #fff;
+  border-radius: 8px 8px 0 0;
+  font-size: 13px;
+}
+.drag { cursor: move; user-select: none; }
+.config-btn {
+  background: #fff;
+  color: #0078d7;
+  border: none;
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.toolbar-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px;
+}
+.config-panel {
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+.config-title {
+  font-size: 13px;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+.config-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 6px;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.config-apply {
+  background: #0078d7;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+#anki-global-toolbar button {
+  padding: 5px 8px;
+  border: none;
+  border-radius: 4px;
+  background: #0078d7;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+#anki-global-toolbar button:hover { opacity: 0.85; }
+
+button[data-val="red"] { background: #ff4444 !important; }
+button[data-val="blue"] { background: #3388ff !important; }
+button[data-val="green"] { background: #00aa00 !important; }
+button[data-val="yellow"] { background: #ffee11 !important; color: #000 !important; }
+button[data-val="#d1f7ff"] { background: #bbf0ff !important; color: #000 !important; }
+button[data-func="font"] { background: #9c27b0 !important; }
+button[data-func="table"] { background: #2e7d32 !important; }
+button[data-func="code"] { background: #555 !important; }
+button[data-func="clear"] { background: #ff3b30 !important; }
+button[data-func="clearAll"] { background: #cc0000 !important; }

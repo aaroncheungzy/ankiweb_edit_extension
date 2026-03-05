@@ -17,8 +17,34 @@ let featureConfig = {
   clear: true, clearAll: true
 };
 
+// 从localStorage加载配置
+function loadFeatureConfig() {
+  const savedConfig = localStorage.getItem('ankiToolbarConfig');
+  if (savedConfig) {
+    try {
+      const config = JSON.parse(savedConfig);
+      // 合并默认配置和保存的配置，确保新添加的功能也能正确加载
+      for (let key in featureConfig) {
+        if (config.hasOwnProperty(key)) {
+          featureConfig[key] = config[key];
+        }
+      }
+    } catch (e) {
+      console.error('Failed to parse saved config:', e);
+    }
+  }
+}
+
+// 保存配置到localStorage
+function saveFeatureConfig() {
+  localStorage.setItem('ankiToolbarConfig', JSON.stringify(featureConfig));
+}
+
 function createGlobalToolbar() {
   if (document.querySelector('#anki-global-toolbar')) return;
+
+  // 加载保存的配置
+  loadFeatureConfig();
 
   const toolbar = document.createElement('div');
   toolbar.id = 'anki-global-toolbar';
@@ -202,6 +228,7 @@ function initConfig() {
       featureConfig[i.name] = i.checked;
     });
     renderToolbar();
+    saveFeatureConfig(); // 保存配置到localStorage
     panel.style.display='none';
   });
 }

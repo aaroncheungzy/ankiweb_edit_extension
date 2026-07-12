@@ -80,3 +80,15 @@ button[data-func="table"] { background: #2e7d32 !important; }
 button[data-func="code"] { background: #555 !important; }
 button[data-func="clear"] { background: #ff3b30 !important; }
 button[data-func="clearAll"] { background: #cc0000 !important; }
+
+/* 深色模式适配 */
+@media (prefers-color-scheme: dark) {
+  #anki-global-toolbar {
+    background: #2b2b2b;
+    border-color: #444;
+    color: #eee;
+  }
+  .config-panel { border-top-color: #444; }
+  .config-btn { background: #333; color: #4ea1ff; }
+  .config-grid { color: #ddd; }
+}
